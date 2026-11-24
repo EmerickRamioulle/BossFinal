@@ -30,10 +30,31 @@
     BONUS :
         - Inspirez-vous de votre combat du cours de Logique & Algorithmes pour aller plus loin dans cet exercice
  */
-class Program
-{
-    static void Main(string[] args)
-    {
-        
-    }
+class Program 
+{ 
+    static int CalculateWeaponDamage() 
+    { 
+        Console.WriteLine("Quelle puissance a l'arme ?"); 
+        int weaponPower = Convert.ToInt32(Console.ReadLine()); 
+        return weaponPower;
+    } 
+
+    static int CalculateRemainingHealth(int damage) 
+    { 
+        int bossHealth = 150; 
+        bossHealth = bossHealth - damage;
+        return bossHealth;
+    } 
+
+    static void DisplayBossStatus(int remainingHealth) 
+    { 
+        Console.WriteLine("Il reste " + remainingHealth + " PV au boss.");
+    } 
+
+    static void Main(string[] args) 
+    { 
+        int damage = CalculateWeaponDamage(); 
+        int remainingHealth = CalculateRemainingHealth(damage); 
+        DisplayBossStatus(remainingHealth); 
+    } 
 }
